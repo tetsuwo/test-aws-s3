@@ -12,7 +12,7 @@ $aws = Aws::factory(sprintf('%s/config.php', dirname(__FILE__)));
 // Get client instances from the service locator by name
 $client = $aws->get('s3');
 
-$iterator = $client->getIterator('ListObjects', array('Bucket' => 'creema-demo'));
+$iterator = $client->getIterator('ListObjects', array('Bucket' => 'demo'));
 
 foreach ($iterator as $object) {
     echo $object['Key'] . "\n";
